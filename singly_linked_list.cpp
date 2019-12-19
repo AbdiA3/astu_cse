@@ -17,7 +17,7 @@ bool empty() {
     return head == NULL ? true : false;
 }
 
-// check whether the element you sent it is in the linked list or not
+// check whether the element you sent is in the linked list or not
 bool has(int element) {
     struct node *p;
     p = head;
