@@ -97,13 +97,18 @@ void insert_before_element(int element, int value) {
         else cout << "There is no node with the given element" << endl;
         return;
     } else {
-        p = head;
-        while(p->next->data != element) {
-            p = p->next;
+        if(element == head->data){
+            prepend(value);
+        } else {
+            p = head;
+            while(p->next->data != element) {
+                p = p->next;
+            }
+            q = p->next;
+            p->next = temp;
+            temp->next = q;  
         }
-        q = p->next;
-        p->next = temp;
-        temp->next = q;
+        
     }
 }
 
