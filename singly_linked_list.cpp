@@ -21,11 +21,11 @@ bool empty() {
 bool has(int element) {
     struct node *p;
     p = head;
-    while(p->data != element && p->next != NULL) {
+    while(p->data != element && p != NULL) {
         p = p->next;
     } 
     
-    if(p->next == NULL) {
+    if(p == NULL) {
         return false;
     } else {
         return true;
