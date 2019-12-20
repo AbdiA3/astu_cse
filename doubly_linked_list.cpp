@@ -26,7 +26,6 @@ bool has(int element) {
 	while(p->data != element && p != NULL) {
 		p = p->next;
 	} 
-	
 	if(p == NULL) {
 		return false;
 	} else {
