@@ -272,5 +272,5 @@ void delete_element(int element) {
 }
 
 int main() {
-	// This is where you will manupilate the linked list as you want
+	// This is where you will manipulate the linked list as you want
 }
