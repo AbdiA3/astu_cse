@@ -177,6 +177,67 @@ void delete_after_element(int element) {
     }
 }
 
+// delete at the end
+void delete_at_end() {
+    struct node *p, *q;
+    if(empty()) {
+        cout << "The linked list is empty." << endl;
+        return;
+    } else {
+        q = head;
+	    while(q->next->next != NULL) {
+	        q = q->next;
+	    }
+	    p = q->next;
+		q->next = NULL;
+		p = NULL;
+		delete p;
+    }    
+}
+
+// delete at the start
+void delete_at_start() {
+    struct node *p;
+    if(empty()) {
+        cout << "The linked list is empty." << endl;
+        return;
+    } else {
+        p = head->next;
+		head = p;
+		p = NULL;
+		delete p;
+    }    
+}
+
+// delete a given node 
+void delete_element(int element) {
+	struct node *p, *q, *r;
+	if(has(element)) {
+	    q = head;
+	    while(q->next->next != NULL) {
+	        q = q->next;
+	    }
+		if(q->next->data == element) {
+			delete_at_end();
+		} else if(head->data == element) {
+			delete_at_start();
+		} else {
+			p = head;
+			while(p->next->data != element) {
+				p = p->next;
+			}
+			q = p->next;
+			r = p->next->next;
+			p->next = r;
+			q = NULL;
+			delete q;
+		}
+	} else {
+		cout << "The element you provided is not in the linked list." << endl;
+		return;
+	}
+}
+
 int main() {
     // This is where you will manupilate the linked list as you want
 }
