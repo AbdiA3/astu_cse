@@ -213,44 +213,6 @@ void delete_after_element(int element) {
 	}
 }
 
-// delete a given node 
-void delete_element(int element) {
-	struct node *p, *q, *r;
-	if(has(element)) {
-
-		if(tail->data == element) {
-			p = tail->prev;
-			tail = p;
-			tail->next = NULL;
-			p = NULL;
-			delete p;
-		} else if(head->data == element) {
-			p = head->next;
-			head = p;
-			head->prev = NULL;
-			p = NULL;
-			delete p;
-		} else {
-			p = head;
-			while(p->data != element) {
-				p = p->next;
-			}
-
-			q = p->prev;
-			r = p->next;
-
-			q->next = r;
-			r->prev = q;
-			p = NULL;
-			delete p;
-		}
-
-	} else {
-		cout << "The element you provided is not in the linked list." << endl;
-		return;
-	}
-}
-
 // delete at the end
 void delete_at_end() {
     struct node *p;
@@ -277,6 +239,36 @@ void delete_at_start() {
         head->prev = NULL;
         delete p;
     }    
+}
+
+// delete a given node 
+void delete_element(int element) {
+	struct node *p, *q, *r;
+	if(has(element)) {
+
+		if(tail->data == element) {
+			delete_at_end();
+		} else if(head->data == element) {
+			delete_at_start();
+		} else {
+			p = head;
+			while(p->data != element) {
+				p = p->next;
+			}
+
+			q = p->prev;
+			r = p->next;
+
+			q->next = r;
+			r->prev = q;
+			p = NULL;
+			delete p;
+		}
+
+	} else {
+		cout << "The element you provided is not in the linked list." << endl;
+		return;
+	}
 }
 
 int main() {
