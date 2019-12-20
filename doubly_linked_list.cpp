@@ -252,6 +252,34 @@ void delete_element(int element) {
 	}
 }
 
+// delete at the end
+void delete_at_end() {
+    struct node *p;
+    if(empty()) {
+        cout << "The linked list is empty." << endl;
+        return;
+    } else {
+        p = tail;
+        tail = p->prev;
+        tail->next = NULL;
+        delete p;
+    }    
+}
+
+// delete at the start
+void delete_at_start() {
+    struct node *p;
+    if(empty()) {
+        cout << "The linked list is empty." << endl;
+        return;
+    } else {
+        p = head;
+        head = p->next;
+        head->prev = NULL;
+        delete p;
+    }    
+}
+
 int main() {
 	// This is where you will manupilate the linked list as you want
 }
