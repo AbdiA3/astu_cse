@@ -32,7 +32,7 @@ int main() {
 	int n; // size of the stack
 	cout << "Enter the size of your stack: ";
 	cin >> n;
-	int stack[n]; // declare an array of type integer with size 'n'
+	int stack[n]; // declare an array of type integer with size 'n' as our stack
 	int top = -1; // initialize the top of your stack as -1
 	push(stack, top, n, 10); // push item 10
 	push(stack, top, n, 20); // push item 20
