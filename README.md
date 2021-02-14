@@ -1,5 +1,5 @@
-# ASTU CSE
+# Data Structure
 
 > Abdi Adem
 
-This is a repository containing source codes and notes for ASTU(Adama Science and Technology University), 2nd year course - *Data structures and Algorithms*.
+Source code for some of the basic data structures. Implemented with C++.
